@@ -1,31 +1,17 @@
 #!/usr/bin/python3
 def roman_to_int(roman_string):
-    roman_mapping = {
-        'I': 1,
-        'V': 5,
-        'X': 10,
-        'L': 50,
-        'C': 100,
-        'D': 500,
-        'M': 1000
-    }
-
+    romans_value = {"I": 1, "V": 5, "X": 10, "M": 1000, "D": 500,
+                    "C": 100, "L": 50}
     result = 0
-
-    if not isinstance(roman_string, str) or roman_string is None:
-        return result
-
     prev_value = 0
-
-    for symbol in reversed(roman_string):
-        print(symbol)
-        value = roman_mapping.get(symbol, 0)
-
-        if value >= prev_value:
-            result += value
+    if roman_string is None:
+        return 0
+    if not isinstance(roman_string, str):
+        return 0
+    for char in reversed(roman_string):
+        if romans_value[char] < prev_value:
+            result -= romans_value[char]
         else:
-            result -= value
-
-        prev_value = value
-
+            result += romans_value[char]
+        prev_value = romans_value[char]
     return result
