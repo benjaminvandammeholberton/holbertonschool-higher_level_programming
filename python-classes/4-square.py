@@ -16,6 +16,18 @@ class Square:
         Args:
             size (int): The size of the square.
         """
+        self.__validate_size(size)
+
+    def __validate_size(self, size):
+        """
+        Validates the size of the square.
+
+        Args:
+            size (int): The size to validate.
+        Raises:
+            TypeError: If the size is not an integer.
+            ValueError: If the size is less than 0.
+        """
         if not isinstance(size, int):
             raise TypeError("size must be an integer")
         elif size < 0:
@@ -49,13 +61,5 @@ class Square:
 
         Args:
             newsize (int): The new size of the square.
-        Raises:
-            TypeError: If the new size is not an integer.
-            ValueError: If the new size is less than 0.
         """
-        if not isinstance(newsize, int):
-            raise TypeError("size must be an integer")
-        elif newsize < 0:
-            raise ValueError("size must be >= 0")
-        else:
-            self.__size = newsize
+        self.__validate_size(newsize)
