@@ -8,6 +8,7 @@ class Square:
 
     Attributes:
         __size (int): The size of the square.
+        __position (tuple): The position of the square.
     """
     def __init__(self, size=0, position=(0, 0)):
         """
@@ -15,6 +16,7 @@ class Square:
 
         Args:
             size (int): The size of the square.
+            position (tuple): The position of the square.
         """
         self.__validate_size(size)
         self.__validate_position(position)
@@ -74,6 +76,8 @@ class Square:
         Each row of the square is represented by '#'
         characters printed horizontally.
         The number of rows and columns is equal to the size of the square.
+        The position of the square is taken into account by adding leading
+        spaces.
         """
         if self.size == 0:
             print()
@@ -88,6 +92,12 @@ class Square:
 
     def __validate_position(self, value):
         """
+        Validates the position of the square.
+
+        Args:
+            value (tuple): The position to validate.
+        Raises:
+            TypeError: If the position is not a tuple of 2 integers.
         """
         if not isinstance(value, tuple):
             raise TypeError("position must be a tuple of 2 positive integers")
@@ -102,8 +112,20 @@ class Square:
 
     @property
     def position(self):
+        """
+        Gets the position of the square.
+
+        Returns:
+            tuple: The position of the square.
+        """
         return self.__position
 
     @position.setter
     def position(self, new_position):
+        """
+        Sets the position of the square.
+
+        Args:
+            new_position (tuple): The new position of the square.
+        """
         self.__validate_position(new_position)
