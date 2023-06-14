@@ -33,7 +33,7 @@ class Rectangle:
             raise ValueError("width must be >= 0")
         else:
             self.__width = width
-        Rectangle.number_of_instances += 1
+        type(self).number_of_instances += 1
 
     @classmethod
     def square(cls, size=0):
@@ -49,7 +49,7 @@ class Rectangle:
                 a square with equal width and height.
 
         """
-        return cls(size, size)
+        return Rectangle(size, size)
 
     @property
     def width(self):
@@ -158,7 +158,7 @@ class Rectangle:
 
         """
         print("Bye rectangle...")
-        Rectangle.number_of_instances -= 1
+        type(self).number_of_instances -= 1
 
     @staticmethod
     def bigger_or_equal(rect_1, rect_2):
