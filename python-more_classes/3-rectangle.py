@@ -35,17 +35,16 @@ class Rectangle:
 
         Returns:
             str: A string representing the rectangle, with '#' characters forming the shape.
-
         """
-        str = ""
+        result = ""
         if self.width == 0 or self.height == 0:
-            return str
+            return result
         for i in range (self.height):
             for j in range (self.width):
-                str = str + "#"
+                result = result + "#"
             if i != self.height - 1:
-                str = str + '\n'
-        return str
+                result = result + '\n'
+        return result
 
     @property
     def width(self):
