@@ -38,6 +38,8 @@ class Rectangle:
 
         """
         str = ""
+        if self.width == 0 or self.height == 0:
+            return str
         for i in range (self.height):
             for j in range (self.width):
                 str = str + "#"
