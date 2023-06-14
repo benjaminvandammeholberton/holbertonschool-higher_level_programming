@@ -16,8 +16,8 @@ class Rectangle:
         Args:
             width (int): The width of the rectangle. Default is 0.
             height (int): The height of the rectangle. Default is 0.
-            number_of_instances (int): Keeps track of the number
-            of Rectangle instances created.
+            number_of_instances (int): Keeps track of the
+            number of Rectangle instances created.
         """
         if not isinstance(height, int):
             raise TypeError("height must be an integer")
