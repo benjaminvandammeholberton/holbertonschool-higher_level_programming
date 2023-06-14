@@ -28,23 +28,6 @@ class Rectangle:
             raise ValueError("width must be >= 0")
         else:
             self.__width = width
-    
-    def __str__(self):
-        """
-        Return a string representation of the rectangle.
-
-        Returns:
-            str: A string representing the rectangle, with '#' characters forming the shape.
-        """
-        result = ""
-        if self.width == 0 or self.height == 0:
-            return result
-        for i in range (self.height):
-            for j in range (self.width):
-                result = result + "#"
-            if i != self.height - 1:
-                result = result + '\n'
-        return result
 
     @property
     def width(self):
@@ -115,3 +98,20 @@ class Rectangle:
         if self.width == 0 or self.height == 0:
             return 0
         return (self.__height + self.__width) * 2
+
+    def __str__(self):
+        """
+        Return a string representation of the rectangle.
+
+        Returns:
+            str: A string representing the rectangle, with '#' characters forming the shape.
+        """
+        result = ""
+        if self.width == 0 or self.height == 0:
+            return result
+        for i in range (self.height):
+            for j in range (self.width):
+                result = result + "#"
+            if i != self.height - 1:
+                result = result + '\n'
+        return result
