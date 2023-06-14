@@ -171,7 +171,7 @@ class Rectangle:
             return rect_2
 
     @classmethod
-    def square(Rectangle, size=0):
+    def square(cls, size=0):
         """
         Create a new Rectangle instance representing a square.
 
