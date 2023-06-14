@@ -35,6 +35,22 @@ class Rectangle:
             self.__width = width
         Rectangle.number_of_instances += 1
 
+    @classmethod
+    def square(cls, size=0):
+        """
+        Create a new Rectangle instance representing a square.
+
+        Args:
+            size (int): The size of the square. Both width and height
+                will be set to this value. Default is 0.
+
+        Returns:
+            Rectangle: A new instance of the Rectangle class representing
+                a square with equal width and height.
+
+        """
+        return Rectangle(size, size)
+
     @property
     def width(self):
         """
@@ -169,19 +185,3 @@ class Rectangle:
             return rect_1
         else:
             return rect_2
-
-    @classmethod
-    def square(cls, size=0):
-        """
-        Create a new Rectangle instance representing a square.
-
-        Args:
-            size (int): The size of the square. Both width and height
-                will be set to this value. Default is 0.
-
-        Returns:
-            Rectangle: A new instance of the Rectangle class representing
-                a square with equal width and height.
-
-        """
-        return Rectangle(size, size)
