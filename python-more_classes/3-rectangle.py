@@ -106,9 +106,7 @@ class Rectangle:
         Returns:
             str: A string representing the rectangle, with '#' characters forming the shape.
         """
-        if self.width == 0 or self.height == 0:
+        if self.__width is 0 or self.__height is 0:
             return ""
-
-        row = "#" * self.width
-        result = [row] * self.height
-        return "\n".join(result)
+        return ("\n".join(["".join(["#" for i in range(self.__width)])
+                for j in range(self.__height)]))
