@@ -9,7 +9,6 @@ class BaseGeometry:
     """
     This class serves as a base for defining geometric classes.
     """
-    pass
     def area(self):
         """
         Raises an exception indicating that the 'area' method is not
