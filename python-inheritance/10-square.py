@@ -68,12 +68,6 @@ class Rectangle(BaseGeometry):
         """
         return self.__height * self.__width
 
-    def print(self):
-        """
-        Print the dimensions of the rectangle.
-        """
-        print(f"[Rectangle] {self.__width}/{self.__height}")
-
     def __str__(self):
         """
         Return a string representation of the rectangle.
