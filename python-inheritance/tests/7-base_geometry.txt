@@ -29,4 +29,14 @@ TypeError: width must be an integer
 Traceback (most recent call last):
 TypeError: width must be an integer
 
+>>> bg.integer_validator("width", 2.4)
+Traceback (most recent call last):
+TypeError: width must be an integer
 
+>>> bg.integer_validator("width", inf)
+Traceback (most recent call last):
+TypeError: width must be an integer
+
+>>> bg.integer_validator("width", true)
+Traceback (most recent call last):
+TypeError: width must be an integer
