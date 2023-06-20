@@ -36,12 +36,6 @@ class Square(Rectangle):
         """
         return self.__size ** 2
 
-    def print(self):
-        """
-        Print the dimensions of the square.
-        """
-        print(f"[Square] {self.__size}/{self.__size}")
-
     def __str__(self):
         """
         Return a string representation of the square.
