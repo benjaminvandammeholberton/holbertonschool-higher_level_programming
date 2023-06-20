@@ -1,7 +1,8 @@
 #!/usr/bin/python3
-"""
-This script defines a class called 'BaseGeometry' with a method 'area' that
-raises an exception.
+"""8-rectangle.py
+Classes: BaseGeometry (base class) and Rectangle (subclass).
+Method(s) of BaseGeometry: area, integer_validator
+Method(s) of Rectangle: __init__
 """
 
 
