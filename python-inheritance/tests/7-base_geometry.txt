@@ -44,3 +44,7 @@ TypeError: width must be an integer
 >>> bg.integer_validator("width", 'nan')
 Traceback (most recent call last):
 TypeError: width must be an integer
+
+>>> bg.integer_validator("width", '')
+Traceback (most recent call last):
+TypeError: width must be an integer
