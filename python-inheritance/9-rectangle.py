@@ -1,8 +1,8 @@
 #!/usr/bin/python3
-"""9-rectangle.py
+"""8-rectangle.py
 Classes: BaseGeometry (base class) and Rectangle (subclass).
 Method(s) of BaseGeometry: area, integer_validator
-Method(s) of Rectangle: __init__, area and __str__
+Method(s) of Rectangle: __init__
 """
 
 
@@ -11,18 +11,51 @@ BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
 class Rectangle(BaseGeometry):
     """inherits from BaseGeometry."""
+    """
+    A class representing a rectangle.
 
-    """The __init__ method, that is called whena new instance is created."""
+    Attributes:
+        __width (int): The width of the rectangle.
+        __height (int): The height of the rectangle.
+    """
     def __init__(self, width, height):
+        """
+        Initializes a Rectangle instance.
+
+        Args:
+            width (int): The width of the rectangle.
+            height (int): The height of the rectangle.
+
+        Raises:
+            TypeError: If width or height is not an integer.
+            ValueError: If width or height is less than or equal to 0.
+        """
         super().integer_validator("width", width)
-        self.__width = width
         super().integer_validator("height", height)
+        self.__width = width
         self.__height = height
 
     def area(self):
-        """computes the area of the rectangle."""
-        return self.__width * self.__height
+        """
+        Calculate and return the area of the rectangle.
+
+        Returns:
+            The area of the rectangle (float or int).
+        """
+        return self.__height * self.__width
+
+    def print(self):
+        """
+        Print the dimensions of the rectangle.
+        """
+        print(f"[Rectangle] {self.__width}/{self.__height}")
 
     def __str__(self):
-        """Tells the main program how to print Rectangle"""
-        return "[Rectangle] {}/{}".format(self.__width, self.__height)
+        """
+        Return a string representation of the rectangle.
+
+        Returns:
+            A string representation of the rectangle in the format
+            [Rectangle] width/height.
+        """
+        return (f"[Rectangle] {self.__width}/{self.__height}")
