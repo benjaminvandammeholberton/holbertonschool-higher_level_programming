@@ -87,7 +87,7 @@ class Rectangle(BaseGeometry):
 
 class Square(Rectangle):
     """
-     A class representing a square.
+    A class representing a square.
 
     Attributes:
         __size (int): The size of the square.
@@ -106,3 +106,12 @@ class Square(Rectangle):
         self.integer_validator("size", size)
         super().__init__(size, size)
         self.__size = size
+
+    def area(self):
+        """
+        Calculates the area of the square.
+
+        Returns:
+            int: The area of the square.
+        """
+        return self.__size ** 2
