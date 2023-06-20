@@ -4,8 +4,7 @@ This script defines a class called 'BaseGeometry' with a method 'area' that
 raises an exception.
 """
 
-Rectangle = __import__('9-recangle').Rectangle
-
+Rectangle = __import__('9-rectangle').Rectangle
 
 class Square(Rectangle):
     """
