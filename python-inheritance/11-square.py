@@ -1,48 +1,28 @@
 #!/usr/bin/python3
+"""9-rectangle.py
+Classes: BaseGeometry (base class), Rectangle (subclass) and Square (subclass).
+Method(s) of BaseGeometry: area, integer_validator
+Method(s) of Rectangle: __init__, area and str
+Method(s) of Square: __init__, area
 """
-This script defines a class called 'BaseGeometry' with a method 'area' that
-raises an exception.
-"""
+
 
 Rectangle = __import__('9-rectangle').Rectangle
 
+
 class Square(Rectangle):
-    """
-     A class representing a square.
+    """class that inherits from Rectangle."""
 
-    Attributes:
-        __size (int): The size of the square.
-    """
+    """__init__ method that is called when a new instance is created."""
     def __init__(self, size):
-        """
-        Initializes a Square instance.
-
-        Args:
-            size (int): The size of the square.
-
-        Raises:
-            TypeError: If size is not an integer.
-            ValueError: If size is less than or equal to 0.
-        """
         super().integer_validator("size", size)
         super().__init__(size, size)
         self.__size = size
 
     def area(self):
-        """
-        Calculates the area of the square.
-
-        Returns:
-            int: The area of the square.
-        """
+        """Computes the area of a square."""
         return self.__size ** 2
 
     def __str__(self):
-        """
-        Return a string representation of the square.
-
-        Returns:
-            A string representation of the square in the format
-            [Rectangle] size/size.
-        """
-        return (f"[Square] {self.__size}/{self.__size}")
+        """Tells the main program how to print Square."""
+        return "[Square] {}/{}".format(self.__size, self.__size)
