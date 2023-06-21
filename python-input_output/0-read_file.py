@@ -3,6 +3,7 @@
 This module defines a function that prints the contents of a file
 """
 
+
 def read_file(filename=""):
     """
     Reads and prints the contents of a file.
@@ -15,4 +16,5 @@ def read_file(filename=""):
         None
     """
     with open(filename, 'r', encoding="utf-8") as f:
-        print(f.read())
+        for line in f:
+            print(line, end="")
