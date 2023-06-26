@@ -165,3 +165,15 @@ class Rectangle(Base):
         """
         return f"[Rectangle] ({self.id}) {self.__x}/{self.__y} - \
 {self.__width}/{self.__height}"
+
+    def update(self, *args):
+        """
+        Update the instance variables with the provided arguments.
+
+        Args:
+            *args: Variable number of arguments containing the values to update
+            the instance variables.
+        """
+        variables = ['id', 'width', 'height', 'x', 'y']
+        for i, arg in enumerate(args):
+            setattr(self, variables[i], arg)
