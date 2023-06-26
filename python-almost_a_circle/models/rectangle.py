@@ -5,6 +5,52 @@ This module defines the Rectangle class
 from models.base import Base
 
 
+def validator_size(value, name):
+    """
+    Validate the size value.
+
+    Args:
+        value (int): The value to be validated.
+        name (str): The name of the attribute being validated.
+
+    Returns:
+        int: The validated value.
+
+    Raises:
+        TypeError: If the value is not an integer.
+        ValueError: If the value is less than or equal to 0.
+    """
+    if not isinstance(value, int):
+        raise TypeError(f"{name} must be an integer")
+    elif value <= 0:
+        raise ValueError(f"{name} must be > 0")
+    else:
+        return value
+
+
+def validator_position(value, name):
+    """
+    Validate the position value.
+
+    Args:
+        value (int): The value to be validated.
+        name (str): The name of the attribute being validated.
+
+    Returns:
+        int: The validated value.
+
+    Raises:
+        TypeError: If the value is not an integer.
+        ValueError: If the value is less than 0.
+    """
+    if not isinstance(value, int):
+        raise TypeError(f"{name}, must be an integer")
+    elif value < 0:
+        raise ValueError(f"{name} must be >= 0")
+    else:
+        return value
+
+
 class Rectangle(Base):
     """
     This class represents a rectangle.
@@ -29,10 +75,10 @@ class Rectangle(Base):
             Defaults to 0.
             id (int, optional): The ID of the rectangle. Defaults to None.
         """
-        self.__width = width
-        self.__height = height
-        self.__x = x
-        self.__y = y
+        self.__width = validator_size(width, "width")
+        self.__height = validator_size(height, "height")
+        self.__x = validator_position(x, "x")
+        self.__y = validator_position(y, "y")
         super().__init__(id)
 
     @property
@@ -43,7 +89,7 @@ class Rectangle(Base):
     @width.setter
     def width(self, width):
         """Set the width of the rectangle."""
-        self.__width = width
+        self.__width = self.__width = validator_size(width, "width")
 
     @property
     def height(self):
@@ -53,7 +99,7 @@ class Rectangle(Base):
     @height.setter
     def height(self, height):
         """Set the height of the rectangle."""
-        self.__height = height
+        self.__height = self.__height = validator_size(height, "height")
 
     @property
     def x(self):
@@ -63,7 +109,7 @@ class Rectangle(Base):
     @x.setter
     def x(self, x):
         """Set the value of x."""
-        self.__x = x
+        self.__x = self.__x = validator_position(x, "x")
 
     @property
     def y(self):
@@ -73,4 +119,4 @@ class Rectangle(Base):
     @y.setter
     def y(self, y):
         """Set the value of y."""
-        self.__y = y
+        self.__x = self.__y = validator_position(y, "y")
