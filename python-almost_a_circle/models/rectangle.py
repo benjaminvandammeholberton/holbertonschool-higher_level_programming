@@ -132,11 +132,21 @@ class Rectangle(Base):
         """
         Display a visual representation of the rectangle using "#" characters.
 
-        The height of the rectangle determines the number of rows, and the
-        width determines the number of "#" characters in each row.
-        The characters are printed to the console.
+        The height of the rectangle determines the number of rows, and
+        the width determines the number of "#" characters in each row.
+        The characters are
+        printed to the console.
+
+        If the rectangle has a positive y-coordinate, blank lines are printed
+        before the rectangle to adjust the position.
+
+        The x-coordinate of the rectangle determines the indentation of
+        each row to adjust the position horizontally.
         """
+        if self.__y > 0:
+            print((self.__y - 1) * "\n")
         for i in range(0, self.__height):
+            print(" " * self.__x, end="")
             for j in range(0, self.__width):
                 print('#', end="")
             print("")
