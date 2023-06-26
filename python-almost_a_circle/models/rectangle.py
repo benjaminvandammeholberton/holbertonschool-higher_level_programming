@@ -118,3 +118,12 @@ class Rectangle(Base):
     def y(self, y):
         """Set the value of y."""
         self.__y = self.validator_position(y, "y")
+
+    def area(self):
+        """
+        Calculate the area of the rectangle.
+
+        Returns:
+            int: The calculated area of the rectangle.
+        """
+        return (self.__width * self.__height)
