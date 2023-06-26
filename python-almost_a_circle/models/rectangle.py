@@ -54,7 +54,7 @@ class Rectangle(Base):
             ValueError: If the value is less than 0.
         """
         if not isinstance(value, int):
-            raise TypeError(f"{name}, must be an integer")
+            raise TypeError(f"{name} must be an integer")
         elif value < 0:
             raise ValueError(f"{name} must be >= 0")
         else:
