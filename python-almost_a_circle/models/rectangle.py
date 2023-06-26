@@ -36,11 +36,11 @@ class Rectangle(Base):
         super().__init__(id)
 
     @property
-    def widht(self, new_widht):
+    def width(self, new_width):
         """Get the width of the rectangle."""
         return self.__width
 
-    @widht.setter
+    @width.setter
     def width(self, new_width):
         """Set the width of the rectangle."""
         self.__width = new_width
