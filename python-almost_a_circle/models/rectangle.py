@@ -140,3 +140,18 @@ class Rectangle(Base):
             for j in range(0, self.__width):
                 print('#', end="")
             print("")
+
+    def __str__(self):
+        """
+        Return a string representation of the Rectangle object.
+
+        The string includes information about the rectangle's ID, position
+        (x, y),
+        width, and height. The format of the string is "[Rectangle] ID x/y -
+        width/height".
+
+        Returns:
+            str: The string representation of the Rectangle object.
+        """
+        return f"[Rectangle] {self.id} {self.__x}/{self.__y} - \
+{self.__width}/{self.__y}"
