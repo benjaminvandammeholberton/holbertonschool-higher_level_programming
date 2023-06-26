@@ -60,7 +60,7 @@ class Rectangle(Base):
         """Get the value of x."""
         return self.__x
 
-    @widht.setter
+    @x.setter
     def x(self, new_x):
         """Set the value of x."""
         self.__widht = new_x
