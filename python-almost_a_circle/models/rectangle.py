@@ -119,4 +119,4 @@ class Rectangle(Base):
     @y.setter
     def y(self, y):
         """Set the value of y."""
-        self.__x = self.__y = validator_position(y, "y")
+        self.__y = validator_position(y, "y")
