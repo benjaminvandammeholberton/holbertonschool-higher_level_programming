@@ -16,49 +16,6 @@ class Rectangle(Base):
         __y (int): The y-coordinate of the rectangle's position.
         id (int): The ID of the rectangle.
     """
-    def validator_size(cls, value, name):
-        """
-        Validate the size value.
-
-        Args:
-            value (int): The value to be validated.
-            name (str): The name of the attribute being validated.
-
-        Returns:
-            int: The validated value.
-
-        Raises:
-            TypeError: If the value is not an integer.
-            ValueError: If the value is less than or equal to 0.
-        """
-        if not isinstance(value, int):
-            raise TypeError(f"{name} must be an integer")
-        elif value <= 0:
-            raise ValueError(f"{name} must be > 0")
-        else:
-            return value
-
-    def validator_position(cls, value, name):
-        """
-        Validate the position value.
-
-        Args:
-            value (int): The value to be validated.
-            name (str): The name of the attribute being validated.
-
-        Returns:
-            int: The validated value.
-
-        Raises:
-            TypeError: If the value is not an integer.
-            ValueError: If the value is less than 0.
-        """
-        if not isinstance(value, int):
-            raise TypeError(f"{name}, must be an integer")
-        elif value < 0:
-            raise ValueError(f"{name} must be >= 0")
-        else:
-            return value
 
     def __init__(self, width, height, x=0, y=0, id=None):
         """
@@ -81,40 +38,52 @@ class Rectangle(Base):
 
     @property
     def width(self):
-        """Get the width of the rectangle."""
+        """Set/get the width of the Rectangle."""
         return self.__width
 
     @width.setter
-    def width(self, width):
-        """Set the width of the rectangle."""
-        self.__width = self.validator_size(width, "width")
+    def width(self, value):
+        if type(value) != int:
+            raise TypeError("width must be an integer")
+        if value <= 0:
+            raise ValueError("width must be > 0")
+        self.__width = value
 
     @property
     def height(self):
-        """Get the height of the rectangle."""
+        """Set/get the height of the Rectangle."""
         return self.__height
 
     @height.setter
-    def height(self, height):
-        """Set the height of the rectangle."""
-        self.__height = self.validator_size(height, "height")
+    def height(self, value):
+        if type(value) != int:
+            raise TypeError("height must be an integer")
+        if value <= 0:
+            raise ValueError("height must be > 0")
+        self.__height = value
 
     @property
     def x(self):
-        """Get the value of x."""
+        """Set/get the x coordinate of the Rectangle."""
         return self.__x
 
     @x.setter
-    def x(self, x):
-        """Set the value of x."""
-        self.__x = self.validator_position(x, "x")
+    def x(self, value):
+        if type(value) != int:
+            raise TypeError("x must be an integer")
+        if value < 0:
+            raise ValueError("x must be >= 0")
+        self.__x = value
 
     @property
     def y(self):
-        """Get the value of y."""
+        """Set/get the y coordinate of the Rectangle."""
         return self.__y
 
     @y.setter
-    def y(self, y):
-        """Set the value of y."""
-        self.__y = self.validator_position(y, "y")
+    def y(self, value):
+        if type(value) != int:
+            raise TypeError("y must be an integer")
+        if value < 0:
+            raise ValueError("y must be >= 0")
+        self.__y = value
