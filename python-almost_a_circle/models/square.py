@@ -43,3 +43,40 @@ class Square(Rectangle):
         """Set the size of the square."""
         self.width = self.validator_size(value, "width")
         self.height = self.validator_size(value, "height")
+
+    def update(self, *args, **kwargs):
+        """
+        Updates the attributes of the Square.
+
+            Args:
+                *args: Variable number of positional arguments.
+                    - If provided, the arguments are treated in the following
+                    order:
+                        - arg1 (int): The new value for the id attribute.
+                        - arg2 (int): The new value for the size attribute.
+                        - arg3 (int): The new value for the x attribute.
+                        - arg4 (int): The new value for the y attribute.
+                **kwargs: Variable number of keyword arguments.
+                    - If provided, the arguments are treated as attribute-value
+                    pairs,
+                    where the attribute is the name of the attribute to update,
+                    and the value is the new value to assign.
+
+            Note:
+                - If both positional arguments (*args) and keyword arguments
+                (**kwargs) are provided,
+                the positional arguments will take precedence, and the keyword
+                arguments will be ignored.
+        """
+        if args:
+            if len(args) >= 1:
+                self.id = args[0]
+            if len(args) >= 2:
+                self.size = args[1]
+            if len(args) >= 3:
+                self.x = args[2]
+            if len(args) >= 4:
+                self.y = args[3]
+        else:
+            for key, value in kwargs.items():
+                setattr(self, key, value)
