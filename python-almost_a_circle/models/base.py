@@ -28,6 +28,7 @@ class Base:
             self.id = id
         self.list_dictionaries.append(self.to_dictionary())
 
+    @staticmethod
     def to_json_string(list_dictionaries):
         """
         Converts a list of dictionaries to a JSON-formatted string.
