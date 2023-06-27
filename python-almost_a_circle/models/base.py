@@ -2,6 +2,7 @@
 """
 This module defines the Base class
 """
+import json
 
 
 class Base:
@@ -42,4 +43,4 @@ class Base:
         if list_dictionaries is None or list_dictionaries == []:
             return "[]"
         else:
-            return str(list_dictionaries)
+            return json.dumps(list_dictionaries)
