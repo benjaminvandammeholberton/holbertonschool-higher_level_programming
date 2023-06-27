@@ -44,4 +44,4 @@ class Base:
         if list_dictionaries is None or list_dictionaries == []:
             return "[]"
         else:
-            return json.dumps(list_dictionaries, sort_keys=True)
+            return json.dumps(list_dictionaries)
