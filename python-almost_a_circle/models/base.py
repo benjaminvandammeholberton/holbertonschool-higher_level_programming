@@ -10,6 +10,7 @@ class Base:
     It serves as the base class for other classes in the module.
     """
     __nb_objects = 0
+    list_dictionaries = []
 
     def __init__(self, id=None):
         """
@@ -24,3 +25,21 @@ class Base:
             self.id = Base.__nb_objects
         else:
             self.id = id
+        self.list_dictionaries.append(self.to_dictionary())
+
+    def to_json_string(list_dictionaries):
+        """
+        Converts a list of dictionaries to a JSON-formatted string.
+
+        Args:
+            list_dictionaries (list): A list of dictionaries.
+
+        Returns:
+            str: A JSON-formatted string representation of the list of
+            dictionaries.
+                If the input list is None or empty, returns "[]".
+        """
+        if list_dictionaries is None or list_dictionaries == []:
+            return "[]"
+        else:
+            return str(list_dictionaries)
