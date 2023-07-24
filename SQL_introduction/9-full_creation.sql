@@ -1,5 +1,5 @@
 -- script that creates a table 'second_table' and add multiples row
-CREATE TABLE second_table (
+CREATE TABLE IF NOT EXISTS second_table (
     id INT,
     name VARCHAR(50),
     score INT
