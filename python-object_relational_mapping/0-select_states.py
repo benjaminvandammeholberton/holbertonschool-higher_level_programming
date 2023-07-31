@@ -13,7 +13,6 @@ if __name__ == '__main__':
     MY_PASSWD = sys.argv[2]
     MY_DB = sys.argv[3]
     MY_PORT = 3306
-    MY_CHARSET = "utf8"
 
     try:
         db = MySQLdb.connect(
@@ -22,7 +21,6 @@ if __name__ == '__main__':
             passwd=MY_PASSWD,
             db=MY_DB,
             port=MY_PORT,
-            charset=MY_CHARSET,
         )
         cur = db.cursor()
 
