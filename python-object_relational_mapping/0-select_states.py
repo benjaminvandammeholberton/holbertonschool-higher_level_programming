@@ -1,6 +1,10 @@
 #!/usr/bin/python3
 import MySQLdb
 import sys
+"""
+This module connects to a MySQL database
+and retrieves data from the 'states'table.
+"""
 
 
 def main():
