@@ -9,16 +9,19 @@ if __name__ == '__main__':
     import MySQLdb
 
     db = MySQLdb.connect(
-        host = "localhost",
-        user = "root",
-        passwd = "root",
-        db = "hbtn_0e_4_usa",
-        port = 3306,
+        host="localhost",
+        user="root",
+        passwd="root",
+        db="hbtn_0e_4_usa",
+        port=3306,
     )
 
     cur = db.cursor()
 
-    query = "SELECT cities.id, cities.name, states.name FROM cities JOIN states ON states.id = cities.state_id"
+    query = "SELECT cities.id, cities.name,\
+    states.name FROM cities JOIN states\
+    ON states.id = cities.state_id\
+    ORDER BY cities.id ASC"
 
     cur.execute(query)
     rows = cur.fetchall()
