@@ -23,7 +23,7 @@ if __name__ == '__main__':
     name = '{}' ORDER BY id ASC".format(sys.argv[4]))
     rows = cur.fetchall()
     for row in rows:
-        if row == sys.argv[4]:
+        if row[0] == sys.argv[4]:
             print(row)
 
     cur.close()
