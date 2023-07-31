@@ -6,12 +6,14 @@ and retrieves data from the 'states' table.
 
 if __name__ == '__main__':
     import MySQLdb
-    import sys
+    from sys import argv
+
     MY_HOST = "localhost"
     MY_USER = sys.argv[1]
     MY_PASSWD = sys.argv[2]
     MY_DB = sys.argv[3]
     MY_PORT = 3306
+    MY_CHARSET = "utf8"
 
     try:
         db = MySQLdb.connect(
@@ -20,11 +22,11 @@ if __name__ == '__main__':
             passwd=MY_PASSWD,
             db=MY_DB,
             port=MY_PORT,
+            charset=MY_CHARSET,
         )
         cur = db.cursor()
 
-        cur.execute("SELECT * FROM states WHERE name \
-        LIKE 'N%' ORDER BY id ASC")
+        cur.execute("SELECT * FROM states")
         rows = cur.fetchall()
     except MySQLdb.Error as e:
         try:
