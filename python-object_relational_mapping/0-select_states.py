@@ -6,7 +6,7 @@ and retrieves data from the 'states' table.
 
 if __name__ == '__main__':
     import MySQLdb
-    from sys import argv
+    import sys
 
     MY_HOST = "localhost"
     MY_USER = sys.argv[1]
@@ -32,9 +32,9 @@ if __name__ == '__main__':
         except IndexError:
             print(f"MySQL Error: {str(e)}")
 
-        finally:
-            cur.close()
-            db.close()
+    finally:
+        cur.close()
+        db.close()
 
-            for row in rows:
-                print(row)
+        for row in rows:
+            print(row)
