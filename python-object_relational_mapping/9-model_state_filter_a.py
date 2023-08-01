@@ -20,5 +20,5 @@ if __name__ == '__main__':
     a = s.query(State).filter(State.name.contains(
         'a')).order_by(State.id).all()
     for instance in a:
-        print(f"{format(instance.id}: {instance.name}")
+        print(f"{instance.id}: {instance.name}")
     s.close()
